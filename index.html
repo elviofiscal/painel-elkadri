@@ -556,7 +556,7 @@ function buildData(consultasRows, internacoesRows){
     const amKey_ = `${dt.year}-${String(dt.month).padStart(2,'0')}`;
     intPorAnoMes[amKey_] = (intPorAnoMes[amKey_] || 0) + 1;
 
-    const convenio = (r['Convênio']||'').trim() || 'NAO INFORMADO';
+    const convenio = ((r['Conv.']||'').trim() || (r['Convênio']||'').trim()) || 'NAO INFORMADO';
     const medico = (r['Médico Inter']||'').trim() || 'NAO INFORMADO';
 
     if(convenio !== 'NAO INFORMADO' && medico !== 'NAO INFORMADO') intComDadosCompletos++;
